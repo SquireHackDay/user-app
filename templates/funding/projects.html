@@ -29,11 +29,8 @@
                                         <p class="description text-justify">{{ project.description }}</p>
                                     </div>
                                     <div class="col button-project">
-                                        <button class="bouton">Donate</button>
+                                        <button class="bouton" ng-click="submit({'project': project.id })">Donate</button>
                                     </div>
-                                </div>
-                                <div class="col col-50 align-right">
-                                    <div class="button button-small" ng-click="submit({'project': project.id })">Contribute</div>
                                 </div>
                             </div>
                         </div>

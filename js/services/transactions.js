@@ -64,12 +64,12 @@ angular.module('generic-client.services.transactions', [])
 
         self.from_cents = function (amount) {
             var currency = JSON.parse($window.localStorage.myCurrency);
-            return parseFloat(amount/Math.pow(10, currency.divisibility)).toFixed(currency.divisibility);
+            return parseFloat(amount/Math.pow(10, currency.divisibility)).toFixed(2);
         };
 
         self.to_cents = function (amount) {
             var currency = JSON.parse($window.localStorage.myCurrency);
-            return parseFloat(amount*Math.pow(10, currency.divisibility)).toFixed(currency.divisibility);
+            return parseFloat(amount*Math.pow(10, currency.divisibility)).toFixed(2);
         };
     })
 
@@ -80,6 +80,6 @@ angular.module('generic-client.services.transactions', [])
 
         self.create = function (amount, project) {
             //return $http.post('https://social-coin-wrapper.herokuapp.com/deposit/' + amount + '/' + project);
-            return $http.post("https://social-coin-wrapper.herokuapp.com/deposit/helghardt@gmail.com/60/coffeeshoprehive@gmail.com")
+            return $http.post("https://social-coin-wrapper.herokuapp.com/deposit/helghardt@gmail.com/99/coffeeshoprehive@gmail.com")
         };
     });

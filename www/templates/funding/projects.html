@@ -1,0 +1,45 @@
+<ion-view view-title="{{'PROJECTS' | translate}}">
+    <div ng-controller="ProjectsCtrl">
+        <form name="projectForm" method="post" novalidate>
+            <ion-content class="custom-body">
+
+                <div ng-repeat="project in projects">
+                    <div class="list-projects">
+                        <div class="block">
+                            <div class="item project">
+                                <div class="img-block">
+                                    <img class="img-project"
+                                          ng-src="img/{{ project.img }}">
+                                </div>
+                                <div class="infos-project">
+                                    <div class="row default-top">
+                                        <div class="col col-30 align-left">
+                                            <h2>{{ project.title }}</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row default-top progress-project">
+                                        <div class="progress-bar col col-50">
+                                            <div class="progress col align-left" style="width: {{ project.progressbar }};"></div>
+                                        </div>
+                                        <div class="col col-50">
+                                            <p class="progress-text text-center">{{ project.progress }}€/{{ project.goal }}€</p>
+                                        </div>
+                                    </div>
+                                    <div class="row col-30 align-left">
+                                        <p class="description text-justify">{{ project.description }}</p>
+                                    </div>
+                                    <div class="col button-project">
+                                        <button class="bouton">Donate</button>
+                                    </div>
+                                </div>
+                                <div class="col col-50 align-right">
+                                    <div class="button button-small" ng-click="submit({'project': project.id })">Contribute</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-content>
+        </form>
+    </div>
+</ion-view>

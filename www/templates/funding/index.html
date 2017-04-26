@@ -1,0 +1,32 @@
+<ion-view view-title="{{'AMOUNT' | translate}}">
+    <div ng-controller="FundingCtrl">
+        <form name="sendForm" method="post" novalidate>
+            <ion-content class="custom-body">
+                <div ng-repeat="project in projects">
+                    <div class="list-default">
+                        <div class="block">
+                            <div class="item item-avatar item-icon-left no-padding">
+                                <img class="circle-base profile-teller"
+                                     ng-src="{{ item.counterparty.profile || 'img/profile_2.png' }}"/>
+
+                                <div class="row default-top">
+                                    <div class="col col-50 align-left">
+                                        <h2>{{ project.title }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-content>
+
+            <!-- Footer bar hack to get layout right -->
+            <ion-footer-bar class="high-footer bar-dark">
+            </ion-footer-bar>
+
+            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(projectForm)" linked="clickMe">
+                <h1 class="title" translate="NEXT"></h1>
+            </button>
+        </form>
+    </div>
+</ion-view>

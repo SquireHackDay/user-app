@@ -24,7 +24,6 @@
   "MAKE_PRIMARY": "Make primary",
   "PIN": "Pin",
   "UPLOAD": "Upload",
-
   "IDENTIFIER": "Email or mobile number",
   "IDENTIFIER_PLACEHOLDER": "e.g hello@rehive.com",
   "IDENTIFIER_REQUIRED_MESSAGE": "Please enter an identifier.",
@@ -114,47 +113,37 @@
   "BIC_PLACEHOLDER": "What is your bank's BIC code?",
   "BITCOIN_ADDRESS": "Bitcoin address",
   "BITCOIN_ADDRESS_PLACEHOLDER": "e.g. 1L7m9D8gCS4DMCdzB8Sd9kk9X9yxG4nKUT",
-
   "LOGIN": "Login",
   "FORGOT_PASSWORD": "Forgot password?",
   "CREATE_ACCOUNT": "Create new account",
   "RESET_EMAIL": "Reset email",
-
   "HOME": "Home",
   "WELCOME_TEXT": "Welcome to Rehive",
   "TRANSACTIONS_TEXT": "Please verify your email address to redeem any unclaimed transactions. Pull to refresh your balance.",
   "TRANSACTION_FEE": "{{ currency }} {{ fee }} Earnings",
   "TRANSACTION_RATE": "{{ from_currency }} {{ from_amount }} to {{ to_currency }} {{ to_amount }}",
-
   "SEND": "Send",
   "SEND_CONFIRM_MESSAGE": "You are sending {{ currency }} {{ amount }} to {{to.length > 20 ? to.slice(0, 10) + '...' + to.slice(to.length - 5, to.length) : to }}.",
   "SEND_SUCCESS_MESSAGE": "You have sent {{ currency }} {{ amount }} to {{to.length > 20 ? to.slice(0, 10) + '...' + to.slice(to.length - 5, to.length) : to }}.",
-
   "REQUEST": "Request",
   "REQUEST_CONFIRM_MESSAGE": "You are requesting {{ amount }} from {{ from }}.",
   "REQUEST_SUCCESS_MESSAGE": "You have requested {{ amount }} from {{ from }}.",
-
   "DEPOSIT": "Deposit",
   "DEPOSIT_INSTRUCTIONS": "Fund your account by transferring {{ currency_code }} to the unique reference number below.",
   "DEPOSIT_NO_INSTRUCTIONS": "No deposit instructions have been provided.",
   "BANK": "Bank",
-
   "WITHDRAW": "Withdraw",
   "SELECT_BANK_ACCOUNT": "Select bank account",
   "SELECT_BITCOIN_ADDRESS": "Select bitcoin address",
   "WITHDRAW_TO": "Withdraw to",
   "WITHDRAW_CONFIRM_MESSAGE": "You are about to withdraw {{ currency }} {{ amount }}.",
   "WITHDRAW_SUCCESS_MESSAGE": "You have successfully made a withdrawal of {{ currency }}{{ amount }}.",
-
   "RECEIVE": "Receive",
   "RECEIVE_INSTRUCTIONS": "The QR code is your public address for accepting payments.",
-
   "ACCOUNTS": "Accounts",
-
   "PROMOTIONS": "Promotions",
   "PROMOTIONS_INSTRUCTIONS": "Your referral code is {{ referral_code }}.",
   "PROMOTION_CODE_REDEEMED_MESSAGE": "Congratulations, your promotion has been applied.",
-
   "SETTINGS": "Settings",
   "PROFILE_IMAGE": "Profile image",
   "PERSONAL_DETAILS": "Personal details",
@@ -181,22 +170,17 @@
   "UPLOAD_INSTRUCTIONS": "Upload or take a photo",
   "PIN_INSTRUCTIONS": "Require pin/touch ID when",
   "VERIFY_MOBILE": "Verify mobile",
-
   "ABOUT": "About",
-
   "LOGOUT": "Logout",
-
   "PASSWORD_RESET_ERROR": "Password reset error",
   "AUTHENTICATION_ERROR": "Authentication failed",
   "UPLOAD_ERROR": "There was an error uploading the file.",
   "INCOMPLETE_ERROR": "Incomplete feature.",
   "RENDER_ERROR": "There was an error rendering the file.",
-
   "VERIFICATION_SENT": "A verification email has been sent, please check your email inbox.",
   "PASSWORD_CHANGED": "Password was successfully changed.",
   "UPLOAD_COMPLETE": "Upload complete.",
   "COMING_SOON": "Coming soon.",
-
   "LOADER_SIGNING_UP": "Signing up...",
   "LOADER_SENDING": "Sending...",
   "LOADER_LOGGING_IN": "Logging in...",
@@ -209,7 +193,17 @@
   "LOADER_ADDING": "Adding...",
   "LOADER_CHANGING_PREFERENCES": "Changing preferences...",
   "LOADER_SWITCHING_ACCOUNT": "Switching accounts...",
-
   "PROJECTS": "Projects",
-  "CONTRIBUTE": "How much would you like to contribute?"
+  "CONTRIBUTE": "How much would you like to contribute?",
+  "CARD": "Add Card",
+  "CARD_NUMBER": "Add you card number",
+  "CARD_NUMBER_PLACEHOLDER": "e.g. 4455 **** *** ****",
+  "CARD_NUMBER_REQUIRED_MESSAGE": "Required to add a card number.",
+  "CARD_NUMBER_VALID_MESSAGE": "Invalid card number",
+  "CARD_NAME": "Add name on your card",
+  "CARD_NAME_PLACEHOLDER": "e.g. Dave Montomery",
+  "EXPIRY_MONTH": "Expiry month",
+  "EXPIRY_DAY": "Expiry day",
+  "CARD_CVV": "CVV",
+  "CARD_CVV_PLACEHOLDER": "e.g. 544"
 }

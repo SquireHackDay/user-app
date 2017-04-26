@@ -1,0 +1,56 @@
+<ion-view view-title="{{'CARD' | translate}}">
+    <div ng-controller="AddCardCtrl" >
+        <form name="addCardForm" method="post" novalidate>
+            <ion-content class="container-body">
+                <div class="list">
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label" translate="CARD_NAME"></span>
+                        <input name="name" ng-model="data.name" type="text" placeholder="{{'CARD_NAME_PLACEHOLDER' | translate}}">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label" translate="CARD_NUMBER"></span>
+                        <input name="amount" ng-model="data.number" type="number" placeholder="{{'CARD_NUMBER_PLACEHOLDER' | translate}}" required>
+                        <div ng-messages="addCardForm.number.$error" role="alert" ng-show='addCardForm.$submitted || addCardForm.amount.$dirty'>
+                            <div ng-message="required" class="form-error" translate="CARD_NUMBER_REQUIRED_MESSAGE"></div>
+                            <div ng-message="number" class="form-error" translate="CARD_NUMBER_VALID_MESSAGE"></div>
+                        </div>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <span class="input-label" translate="EXPIRY_MONTH"></span>
+                        <select ng-model="data.expiry_month" name="expiry_month">
+                            <option ng-repeat="month in months" value="{{ month }}">{{ month }}</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <span class="input-label" translate="EXPIRY_DAY"></span>
+                        <select ng-model="data.expiry_day" name="expiry_day">
+                            <option ng-repeat="day in days" value="{{ day }}">{{ day }}</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label" translate="CARD_CVV"></span>
+                        <input name="cvv" ng-model="data.cvv" type="number" placeholder="{{'CARD_CVV_PLACEHOLDER' | translate}}" required>
+                        <div ng-messages="addCardForm.number.$error" role="alert" ng-show='addCardForm.$submitted || addCardForm.cvv.$dirty'>
+                            <div ng-message="required" class="form-error" translate="CARD_CVV_REQUIRED_MESSAGE"></div>
+                            <div ng-message="number" class="form-error" translate="CARD_CVV_VALID_MESSAGE"></div>
+                        </div>
+                    </label>
+
+                </div>
+            </ion-content>
+
+            <!-- Footer bar hack to get layout right -->
+            <ion-footer-bar class="high-footer bar-dark">
+            </ion-footer-bar>
+
+            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(addCardForm)" linked="clickMe">
+                <h1 class="title" translate="NEXT"></h1>
+            </button>
+        </form>
+    </div>
+</ion-view>

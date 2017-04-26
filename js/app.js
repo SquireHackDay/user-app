@@ -743,6 +743,23 @@ angular.module('generic-client', ['ionic',
                 }
             })
 
+            .state('app.add_card', {
+                url: '/contribute',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/funding/add_card.html',
+                        controller: 'ContributeCtrl'
+                    }
+                },
+                params: {
+                    project: null,
+                    number: null,
+                    name: null,
+                    expiry: null,
+                    cvv: null
+                }
+            })
+
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/home');
     });

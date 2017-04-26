@@ -9892,7 +9892,7 @@ a.button {
   .list-default .no-padding-2 {
     padding: 1px 2px 1px 0; }
   .list-default .block:nth-child(odd) .item {
-    background: #7ECEFD; }
+    background: #fff; }
   .list-default .block .item .icon {
     font-size: 45px; }
   .list-default .block .item .align-right {
@@ -9908,12 +9908,12 @@ a.button {
   .list-default .block .item h4 {
     font-size: 11px;
     font-weight: 400;
-    color: #024e7a;
+    color: gray;
     padding-top: 2px; }
   .list-default .block .item h5 {
     font-size: 11px;
     font-weight: 400;
-    color: #024e7a; }
+    color: gray; }
 
 .item-avatar {
   padding-left: 60px; }
@@ -9929,8 +9929,8 @@ a.button {
   margin-right: 15px; }
 
 input.ng-pristine ~ div .form-error {
-  color: #7ECEFD;
-  border-top: 2px solid #7ECEFD; }
+  color: #fff;
+  border-top: 2px solid #fff; }
 
 input.ng-invalid, input.ng-dirty {
   box-shadow: none; }

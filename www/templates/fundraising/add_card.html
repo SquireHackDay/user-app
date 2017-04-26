@@ -13,7 +13,7 @@
                         <span class="input-label" translate="CARD_NUMBER"></span>
                         <input name="amount" ng-model="data.number" type="number" placeholder="{{'CARD_NUMBER_PLACEHOLDER' | translate}}" required>
                         <div ng-messages="addCardForm.number.$error" role="alert" ng-show='addCardForm.$submitted || addCardForm.amount.$dirty'>
-                            <div ng-message="required" class="form-error" translate="CARD_NUMBER_REQUIRED_MESSAGE"></div>
+                            <!--<div ng-message="required" class="form-error" translate="CARD_NUMBER_REQUIRED_MESSAGE"></div>-->
                             <div ng-message="number" class="form-error" translate="CARD_NUMBER_VALID_MESSAGE"></div>
                         </div>
                     </label>

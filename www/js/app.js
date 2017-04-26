@@ -724,31 +724,32 @@ angular.module('generic-client', ['ionic',
                 url: '/projects',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/funding/projects.html',
+                        templateUrl: 'templates/fundraising/projects.html',
                         controller: 'ProjectsCtrl'
                     }
                 }
             })
 
-            .state('app.contribute', {
-                url: '/contribute',
+            .state('app.donate', {
+                url: '/donate',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/funding/contribute.html',
-                        controller: 'ContributeCtrl'
+                        templateUrl: 'templates/fundraising/donate.html',
+                        controller: 'DonateCtrl'
                     }
                 },
                 params: {
+                    amount: null,
                     project: null
                 }
             })
 
             .state('app.add_card', {
-                url: '/contribute',
+                url: '/add_card',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/funding/add_card.html',
-                        controller: 'ContributeCtrl'
+                        templateUrl: 'templates/fundraising/add_card.html',
+                        controller: 'AddCardCtrl'
                     }
                 },
                 params: {
@@ -759,6 +760,20 @@ angular.module('generic-client', ['ionic',
                     cvv: null
                 }
             })
+
+            .state('app.donate_success', {
+                url: '/donate_success',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/fundraising/success.html',
+                        controller: 'DonateSuccessCtrl'
+                    }
+                },
+                params: {
+                    amount: null,
+                    note: null
+                }
+            });
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/home');

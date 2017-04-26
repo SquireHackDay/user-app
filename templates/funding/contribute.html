@@ -1,12 +1,12 @@
 <ion-view view-title="{{'AMOUNT' | translate}}">
-    <div ng-controller="CrowdFundingCtrl" >
-        <form name="sendForm" method="post" novalidate>
+    <div ng-controller="ContributeCtrl" >
+        <form name="contributeForm" method="post" novalidate>
             <ion-content class="container-body">
                 <div class="list">
                     <label class="item item-input item-stacked-label">
-                        <span class="input-label" translate="AMOUNT"></span>
+                        <span class="input-label" translate="CONTRIBUTE"></span>
                         <input name="amount" ng-model="data.amount" type="number" placeholder="{{'AMOUNT_PLACEHOLDER' | translate}}" required>
-                        <div ng-messages="sendForm.amount.$error" role="alert" ng-show='sendForm.$submitted || sendForm.amount.$dirty'>
+                        <div ng-messages="contributeForm.amount.$error" role="alert" ng-show='contributeForm.$submitted || contributeForm.amount.$dirty'>
                             <div ng-message="required" class="form-error" translate="AMOUNT_REQUIRED_MESSAGE"></div>
                             <div ng-message="number" class="form-error" translate="AMOUNT_VALID_MESSAGE"></div>
                         </div>
@@ -23,7 +23,7 @@
             <ion-footer-bar class="high-footer bar-dark">
             </ion-footer-bar>
 
-            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(sendForm)" linked="clickMe">
+            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(contributeForm)" linked="clickMe">
                 <h1 class="title" translate="NEXT"></h1>
             </button>
         </form>

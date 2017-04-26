@@ -205,5 +205,6 @@
   "EXPIRY_MONTH": "Expiry month",
   "EXPIRY_DAY": "Expiry day",
   "CARD_CVV": "CVV",
-  "CARD_CVV_PLACEHOLDER": "e.g. 544"
+  "CARD_CVV_PLACEHOLDER": "e.g. 544",
+  "DONATION_SUCCESS_MESSAGE": "You have successfully donated {{ currency_symbol }} {{ amount }} to {{ merchant }}'s {{ title }} project."
 }

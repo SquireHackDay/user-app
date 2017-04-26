@@ -45,12 +45,13 @@ angular.module('generic-client.controllers.funding', [])
              $ionicLoading.show({
                 template: $translate.instant("LOADER_PROCESSING")
             });
-            Donation.create(Conversions.to_cents($scope.amount), $scope.project).then(function (res) {
+            Donation.create(Conversions.to_cents($scope.amount), $scope.project.id).then(function (res) {
                 if (res.status === 0) {
                     $ionicLoading.hide();
                     $state.go('app.donate_success', {
                         amount: $scope.amount,
                         project: $scope.project
+
                     });
                 } else {
                     $ionicLoading.hide();
@@ -63,12 +64,11 @@ angular.module('generic-client.controllers.funding', [])
         }
     })
 
-    .controller('DonateSuccessCtrl', function ($scope, $state, $stateParams) {
+    .controller('DonateSuccessCtrl', function ($scope, $window, $state, $stateParams) {
         'use strict';
-
         $scope.data = {};
         $scope.amount = $stateParams.amount;
-        $scope.note = $stateParams.note;
-        $scope.to = $stateParams.to;
-        $scope.currency = $stateParams.currency;
+        $scope.project = $stateParams.project;
+
+        $scope.currency = JSON.parse($window.localStorage.getItem('myCurrency'));
     });

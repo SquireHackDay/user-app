@@ -79,9 +79,6 @@ angular.module('generic-client.services.transactions', [])
 
         self.create = function (amount, project) {
 
-            console.log('the details are');
-            console.log(amount + project);
-
             var user = JSON.parse($window.localStorage.user);
             return $http.post('https://social-coin-wrapper.herokuapp.com/deposit/' + String(user.email) + '/' + String(amount) + '/' + String(project));
         };

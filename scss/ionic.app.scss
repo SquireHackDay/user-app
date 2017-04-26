@@ -25,7 +25,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //------------------------------------------
 
 // Main Color for elements
-$primary: #E74C3C;
+$primary: #3E454C;
 //Default: #56C1ED;
 
 // Color of fonts/icons within primary color
@@ -37,17 +37,24 @@ $tertiary: #fff;
 //Default: #fff;
 
 // Side bar
-$sidebar: #3E454C;
+$sidebar: #2185C5;
 $background: #F6F6F6;
+
+//Progress bar project
+$ProgressBar: #7ECEFD;
+$Progress: #2185C5;
+
+//button project
+$button: #E74C3C;
 
 // Notification colors
 $notify: #E74C3C;
 //Default: #56C1ED;
-$error: #dd4b39;
+$error: #E74C3C;
 //Default: #dd2c00;
-$cancel: #dd4b39;
+$cancel: #E74C3C;
 //Default: #dd2c00;
-$warning: #dd4b39;
+$warning: #E74C3C;
 //Default: #dd2c00;
 $success: #38C87F;
 
@@ -534,4 +541,76 @@ input.ng-invalid, input.ng-dirty {
 
 img-crop {
   position: absolute;
+}
+
+
+//Projects-list
+.body-projects{
+  padding: 10px;
+}
+.project{
+  border: none;
+  padding: 5px;
+  display: flex;
+}
+
+.list-projects{
+  height: 150px;
+  margin-bottom: 10px;
+
+  .item, .block{
+    height:100%;
+  }
+}
+
+.progress-text{
+  font-size: 12px;
+}
+
+.img-project{
+  width: 60px;
+  height: 60px;
+}
+
+.img-block{
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infos-project{
+  flex: 1;
+}
+
+.progress-bar{
+  background-color: $ProgressBar;
+  height: 10px;
+  padding: 0 !important;
+}
+
+.progress{
+  background-color: $Progress;
+}
+
+.progress-project{
+  display: flex;
+  align-items: center;
+}
+
+.button-project{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .bouton{
+    background-color: $button;
+    padding: 5px 14px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }

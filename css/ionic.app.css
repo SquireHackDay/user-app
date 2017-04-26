@@ -9846,7 +9846,7 @@ a.button {
       text-decoration: none; }
 
 .app-side-menu {
-  background-color: #2070A0;
+  background-color: #3E454C;
   color: #fff; }
   .app-side-menu h1 {
     font-size: 16px;
@@ -9867,15 +9867,15 @@ a.button {
   position: relative; }
   .app-side-menu-list .item {
     border-color: transparent;
-    background-color: #2070A0; }
+    background-color: #3E454C; }
     .app-side-menu-list .item:last-of-type {
       border-bottom: none; }
     .app-side-menu-list .item a {
       color: #fff;
-      background-color: #2070A0;
+      background-color: #3E454C;
       padding: 12px; }
       .app-side-menu-list .item a.activated {
-        background-color: #2070A0;
+        background-color: #3E454C;
         border-color: transparent; }
 
 .list-default {
@@ -9892,7 +9892,7 @@ a.button {
   .list-default .no-padding-2 {
     padding: 1px 2px 1px 0; }
   .list-default .block:nth-child(odd) .item {
-    background: #F6F6F6; }
+    background: #7ECEFD; }
   .list-default .block .item .icon {
     font-size: 45px; }
   .list-default .block .item .align-right {
@@ -9908,12 +9908,12 @@ a.button {
   .list-default .block .item h4 {
     font-size: 11px;
     font-weight: 400;
-    color: #777777;
+    color: #024e7a;
     padding-top: 2px; }
   .list-default .block .item h5 {
     font-size: 11px;
     font-weight: 400;
-    color: #777777; }
+    color: #024e7a; }
 
 .item-avatar {
   padding-left: 60px; }
@@ -9929,8 +9929,8 @@ a.button {
   margin-right: 15px; }
 
 input.ng-pristine ~ div .form-error {
-  color: #5EA5CF;
-  border-top: 2px solid #5EA5CF; }
+  color: #7ECEFD;
+  border-top: 2px solid #7ECEFD; }
 
 input.ng-invalid, input.ng-dirty {
   box-shadow: none; }

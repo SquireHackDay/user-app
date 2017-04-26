@@ -3,8 +3,9 @@ angular.module('generic-client.controllers.funding', [])
     .controller('ProjectsCtrl', function ($scope, $state) {
         'use strict';
 
-        $scope.projects = [{id: 'coffeeshoprehive@gmail.com', merchant: 'Coffee Street', title: 'Kettle', goal: '10.00', progress: '5.00'},
-            {id: 'coffeeshoprehive@gmail.com', merchant: 'Tea Street', title: 'Chairs', goal: '15.00', progress: '2.00'}]
+        $scope.projects = [
+        {id: 'coffeeshoprehive@gmail.com', 'merchant': 'Coffee Street', 'title': 'Kettle', 'goal': '10.00', 'progress': '5.00', 'img': 'kettle.png', 'progressbar': '50%', 'description': 'This project is for buying kettles.'},
+        {id: 'coffeeshoprehive@gmail.com', 'merchant': 'Tea Street', 'title': 'Chairs', 'goal': '15.00', 'progress': '2.00', 'img': 'chairs.png', 'progressbar': '13.33%', 'description': 'This project is for buying chairs.'}];
 
         $scope.submit = function (form) {
             console.log(form)
@@ -12,6 +13,7 @@ angular.module('generic-client.controllers.funding', [])
                 project: form.project
             });
         }
+
     })
 
     .controller('ContributeCtrl', function ($scope, $state, $stateParams, $window) {

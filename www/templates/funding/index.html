@@ -1,9 +1,22 @@
 <ion-view view-title="{{'AMOUNT' | translate}}">
     <div ng-controller="FundingCtrl">
         <form name="sendForm" method="post" novalidate>
-            <ion-content class="container-body">
+            <ion-content class="custom-body">
                 <div ng-repeat="project in projects">
-                    {{project.merchant}}
+                    <div class="list-default">
+                        <div class="block">
+                            <div class="item item-avatar item-icon-left no-padding">
+                                <img class="circle-base profile-teller"
+                                     ng-src="{{ item.counterparty.profile || 'img/profile_2.png' }}"/>
+
+                                <div class="row default-top">
+                                    <div class="col col-50 align-left">
+                                        <h2>{{ project.title }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </ion-content>
 

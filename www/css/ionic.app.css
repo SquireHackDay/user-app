@@ -9929,8 +9929,8 @@ a.button {
   margin-right: 15px; }
 
 input.ng-pristine ~ div .form-error {
-  color: #fff;
-  border-top: 2px solid #fff; }
+  color: #E74C3C;
+  border-top: 2px solid #E74C3C; }
 
 input.ng-invalid, input.ng-dirty {
   box-shadow: none; }

@@ -24,10 +24,32 @@ angular.module('generic-client.controllers.funding', [])
 
         $scope.submit = function (form) {
             if (form.$valid) {
-                $state.go('app.card', {
+                $state.go('app.add_card', {
                     amount: form.amount.$viewValue,
                     note: form.note.$viewValue,
                     currency: $scope.currency
+                });
+            }
+        };
+    })
+
+    .controller('AddCardCtrl', function ($scope, $state, $stateParams, $window) {
+        'use strict';
+
+        $scope.data = {};
+        $scope.currency = JSON.parse($window.localStorage.getItem('myCurrency'));
+        $scope.months = [1,2,3,4,5,6,7,8,9,10,11,12];
+        $scope.days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+
+        console.log($stateParams.project);
+
+        $scope.submit = function (form) {
+            if (form.$valid) {
+                $state.go('app.card', {
+                    number: form.number.$viewValue,
+                    name: form.name.$viewValue,
+                    expiry: form.expiry.$viewValue,
+                    csv: form.csv.$viewValue
                 });
             }
         };

@@ -45,11 +45,10 @@ angular.module('generic-client.controllers.funding', [])
              $ionicLoading.show({
                 template: $translate.instant("LOADER_PROCESSING")
             });
-            Donation.create(Conversions.to_cents(60), $scope.project).then(function (res) {
-                console.log(res.status);
+            Donation.create(Conversions.to_cents($scope.amount), $scope.project).then(function (res) {
                 if (res.status === 0) {
                     $ionicLoading.hide();
-                    $state.go('app.donation_success', {
+                    $state.go('app.donate_success', {
                         amount: $scope.amount,
                         project: $scope.project
                     });

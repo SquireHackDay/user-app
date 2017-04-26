@@ -21,6 +21,7 @@ angular.module('generic-client', ['ionic',
     'generic-client.controllers.help',
     'generic-client.controllers.about',
     'generic-client.controllers.currency_accounts',
+    'generic-client.controllers.funding',
     'generic-client.services',
     'generic-client.services.accounts',
     'generic-client.services.transactions',
@@ -716,7 +717,19 @@ angular.module('generic-client', ['ionic',
                         controller: 'PinCtrl'
                     }
                 }
-            });
+            })
+
+
+            // Crowd funding
+            .state('app.projects', {
+                url: '/projects',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/funding/index.html',
+                        controller: 'FundingCtrl'
+                    }
+                }
+            })
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/home');

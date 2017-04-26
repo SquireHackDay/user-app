@@ -1,6 +1,6 @@
-<ion-view view-title="{{'AMOUNT' | translate}}">
-    <div ng-controller="FundingCtrl">
-        <form name="sendForm" method="post" novalidate>
+<ion-view view-title="{{'PROJECTS' | translate}}">
+    <div ng-controller="ProjectsCtrl">
+        <form name="projectForm" method="post" novalidate>
             <ion-content class="custom-body">
                 <div ng-repeat="project in projects">
                     <div class="list-default">
@@ -15,21 +15,13 @@
                                     </div>
                                 </div>
                                 <div class="col col-50 align-right">
-
+                                    <div class="button button-small" ng-click="submit({'project': project.id })">Contribute</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </ion-content>
-
-            <!-- Footer bar hack to get layout right -->
-            <ion-footer-bar class="high-footer bar-dark">
-            </ion-footer-bar>
-
-            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(projectForm)" linked="clickMe">
-                <h1 class="title" translate="NEXT"></h1>
-            </button>
         </form>
     </div>
 </ion-view>

@@ -719,15 +719,27 @@ angular.module('generic-client', ['ionic',
                 }
             })
 
-
             // Crowd funding
             .state('app.projects', {
                 url: '/projects',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/funding/index.html',
-                        controller: 'FundingCtrl'
+                        templateUrl: 'templates/funding/projects.html',
+                        controller: 'ProjectsCtrl'
                     }
+                }
+            })
+
+            .state('app.contribute', {
+                url: '/contribute',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/funding/contribute.html',
+                        controller: 'ContributeCtrl'
+                    }
+                },
+                params: {
+                    project: null
                 }
             })
 

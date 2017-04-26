@@ -3,8 +3,8 @@ angular.module('generic-client.controllers.funding', [])
     .controller('FundingCtrl', function ($scope) {
         'use strict';
 
-        $scope.projects = [{'merchant': 'Coffee Street', 'project': 'Kettle', 'goal': '10.00', 'progress': '5.00'},
-            {'merchant': 'Tea Street', 'project': 'Chairs', 'goal': '15.00', 'progress': '2.00'}]
+        $scope.projects = [{'merchant': 'Coffee Street', 'title': 'Kettle', 'goal': '10.00', 'progress': '5.00'},
+            {'merchant': 'Tea Street', 'title': 'Chairs', 'goal': '15.00', 'progress': '2.00'}]
     })
 
     //.controller('FundingAmountCtrl', function ($scope, $state, $window) {

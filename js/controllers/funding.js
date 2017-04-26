@@ -8,122 +8,72 @@ angular.module('generic-client.controllers.funding', [])
         {id: 'coffeeshoprehive@gmail.com', 'merchant': 'Tea Street', 'title': 'Chairs', 'goal': '15.00', 'progress': '2.00', 'img': 'chairs.png', 'progressbar': '13.33%', 'description': 'This project is for buying chairs.'}];
 
         $scope.submit = function (form) {
-            console.log(form)
-            $state.go('app.contribute', {
+            $state.go('app.donate', {
                 project: form.project
             });
         }
 
     })
 
-    .controller('ContributeCtrl', function ($scope, $state, $stateParams, $window) {
+    .controller('DonateCtrl', function ($scope, $state, $stateParams, $window) {
         'use strict';
 
         $scope.data = {};
         $scope.currency = JSON.parse($window.localStorage.getItem('myCurrency'));
 
-        console.log($stateParams.project);
-
         $scope.submit = function (form) {
             if (form.$valid) {
                 $state.go('app.add_card', {
                     amount: form.amount.$viewValue,
-                    note: form.note.$viewValue,
-                    currency: $scope.currency
+                    project: $stateParams.project
                 });
             }
         };
     })
 
-    .controller('AddCardCtrl', function ($scope, $state, $stateParams, $window) {
+    .controller('AddCardCtrl', function ($scope, $state, $stateParams, $window, Donation, Conversions, $ionicLoading, $translate, $ionicPopup) {
         'use strict';
 
         $scope.data = {};
         $scope.currency = JSON.parse($window.localStorage.getItem('myCurrency'));
         $scope.months = [1,2,3,4,5,6,7,8,9,10,11,12];
         $scope.days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+        $scope.project = $stateParams.project;
+        $scope.amount = $stateParams.amount;
 
-        console.log($stateParams.project);
+        console.log($scope.project);
+        console.log($scope.amount);
 
         $scope.submit = function (form) {
-            if (form.$valid) {
-                $state.go('app.card', {
-                    number: form.number.$viewValue,
-                    name: form.name.$viewValue,
-                    expiry: form.expiry.$viewValue,
-                    csv: form.csv.$viewValue
-                });
-            }
-        };
+             $ionicLoading.show({
+                template: $translate.instant("LOADER_PROCESSING")
+            });
+            Donation.create(Conversions.to_cents($scope.project), $scope.project).then(function (res) {
+                console.log(res);
+                console.log(res.status);
+                if (res.status === 200) {
+                    $ionicLoading.hide();
+                    $state.go('app.donation_success', {
+                        amount: $scope.amount,
+                        project: $scope.project
+                    });
+                } else {
+                    $ionicLoading.hide();
+                    $ionicPopup.alert({title: $translate.instant("ERROR"), template: res.data.message});
+                }
+            }).catch(function (error) {
+                $ionicPopup.alert({title: $translate.instant("AUTHENTICATION_ERROR"), template: error.message});
+                $ionicLoading.hide();
+            });
+        }
     })
 
-//.controller('FundingCardCtrl', function ($scope, $state, $stateParams) {
-//    'use strict';
-//
-//    $scope.data = {};
-//    $scope.amount = $stateParams.amount;
-//    $scope.note = $stateParams.note;
-//    $scope.currency = $stateParams.currency;
-//
-//    function onError() {
-//        alert('Error!');
-//    }
-//
-//    $scope.submit = function (form) {
-//        if (form.$valid) {
-//            $state.go('app.send_confirm', {
-//                amount: $scope.amount,
-//                note: $scope.note,
-//                to: form.to.$viewValue,
-//                currency: $scope.currency
-//            });
-//        }
-//    };
-//})
-//
-//.controller('FundingCompleteCtrl', function ($scope, $state, $stateParams, $ionicLoading, $translate, Transaction, $ionicPopup, Conversions) {
-//    'use strict';
-//    $scope.data = {};
-//    $scope.amount = $stateParams.amount;
-//    $scope.note = $stateParams.note;
-//    $scope.to = $stateParams.to;
-//    $scope.currency = $stateParams.currency;
-//
-//    if ($scope.note === null) {
-//        $scope.note = ''
-//    }
-//
-//    $scope.submit = function (amount, note, to, currency) {
-//        $ionicLoading.show({
-//            template: $translate.instant("LOADER_SENDING")
-//        });
-//
-//        Transaction.create(Conversions.to_cents(amount), note, to).then(function (res) {
-//            if (res.status === 201) {
-//                $ionicLoading.hide();
-//                $state.go('app.send_success', {
-//                    amount: amount,
-//                    note: note,
-//                    to: to,
-//                    currency: currency
-//                });
-//            } else {
-//                $ionicLoading.hide();
-//                $ionicPopup.alert({title: $translate.instant("ERROR"), template: res.data.message});
-//            }
-//        }).catch(function (error) {
-//            $ionicPopup.alert({title: $translate.instant("AUTHENTICATION_ERROR"), template: error.message});
-//            $ionicLoading.hide();
-//        });
-//    };
-//})
-//
-//.controller('SendSuccessCtrl', function ($scope, $state, $stateParams) {
-//    'use strict';
-//
-//    $scope.data = {};
-//    $scope.amount = $stateParams.amount;
-//    $scope.note = $stateParams.note;
-//    $scope.to = $stateParams.to;
-//    $scope.currency = $stateParams.currency;
-//});
+    .controller('DonateSuccessCtrl', function ($scope, $state, $stateParams) {
+        'use strict';
+
+        $scope.data = {};
+        $scope.amount = $stateParams.amount;
+        $scope.note = $stateParams.note;
+        $scope.to = $stateParams.to;
+        $scope.currency = $stateParams.currency;
+    });

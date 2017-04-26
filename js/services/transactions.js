@@ -31,7 +31,6 @@ angular.module('generic-client.services.transactions', [])
     })
 
 
-
     .service('Withdrawal', function ($http, API) {
         'use strict';
         var self = this;
@@ -64,22 +63,26 @@ angular.module('generic-client.services.transactions', [])
 
         self.from_cents = function (amount) {
             var currency = JSON.parse($window.localStorage.myCurrency);
-            return parseFloat(amount/Math.pow(10, currency.divisibility)).toFixed(2);
+            return parseFloat(amount / Math.pow(10, currency.divisibility)).toFixed(currency.divisibility);
         };
 
         self.to_cents = function (amount) {
             var currency = JSON.parse($window.localStorage.myCurrency);
-            return parseFloat(amount*Math.pow(10, currency.divisibility)).toFixed(2);
+            return parseInt(amount * Math.pow(10, currency.divisibility));
         };
     })
 
 
-    .service('Donation', function ($http) {
+    .service('Donation', function ($http, $window) {
         'use strict';
         var self = this;
 
         self.create = function (amount, project) {
-            //return $http.post('https://social-coin-wrapper.herokuapp.com/deposit/' + amount + '/' + project);
-            return $http.post("https://social-coin-wrapper.herokuapp.com/deposit/helghardt@gmail.com/99/coffeeshoprehive@gmail.com")
+
+            console.log('the details are');
+            console.log(amount + project);
+
+            var user = JSON.parse($window.localStorage.user);
+            return $http.post('https://social-coin-wrapper.herokuapp.com/deposit/' + String(user.email) + '/' + String(amount) + '/' + String(project));
         };
     });

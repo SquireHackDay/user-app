@@ -753,6 +753,7 @@ angular.module('generic-client', ['ionic',
                     }
                 },
                 params: {
+                    amount: null,
                     project: null,
                     number: null,
                     name: null,

@@ -41,16 +41,11 @@ angular.module('generic-client.controllers.funding', [])
         $scope.project = $stateParams.project;
         $scope.amount = $stateParams.amount;
 
-        console.log($scope.project);
-        console.log($scope.amount);
-
         $scope.submit = function (form) {
              $ionicLoading.show({
                 template: $translate.instant("LOADER_PROCESSING")
             });
-            Donation.create(Conversions.to_cents($scope.project), $scope.project).then(function (res) {
-                console.log(res);
-                console.log(res.status);
+            Donation.create(Conversions.to_cents(60), $scope.project).then(function (res) {
                 if (res.status === 200) {
                     $ionicLoading.hide();
                     $state.go('app.donation_success', {

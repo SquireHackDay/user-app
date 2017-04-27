@@ -543,67 +543,67 @@ img-crop {
   position: absolute;
 }
 
-
 //Projects-list
-.body-projects{
+.body-projects {
   padding: 10px;
 }
-.project{
+
+.project {
   border: none;
   padding: 5px;
   display: flex;
 }
 
-.list-projects{
+.list-projects {
   height: 150px;
   margin-bottom: 10px;
 
-  .item, .block{
-    height:100%;
+  .item, .block {
+    height: 100%;
   }
 }
 
-.progress-text{
+.progress-text {
   font-size: 12px;
 }
 
-.img-project{
+.img-project {
   width: 60px;
   height: 60px;
 }
 
-.img-block{
+.img-block {
   width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.infos-project{
+.infos-project {
   flex: 1;
 }
 
-.progress-bar{
+.progress-bar {
   background-color: $ProgressBar;
   height: 10px;
   padding: 0 !important;
 }
 
-.progress{
+.progress {
   background-color: $Progress;
 }
 
-.progress-project{
+.progress-project {
   display: flex;
   align-items: center;
 }
 
-.button-project{
+.button-project {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
-  .bouton{
+  .bouton {
     background-color: $button;
     padding: 5px 14px;
     text-align: center;
@@ -612,5 +612,14 @@ img-crop {
     color: $white;
     font-size: 16px;
     font-weight: bold;
+  }
+}
+
+// Transaction list
+.line-break {
+  h2, h3, h5 {
+    overflow: inherit;
+    text-overflow: inherit;
+    white-space: normal;
   }
 }

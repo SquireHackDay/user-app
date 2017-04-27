@@ -17,12 +17,12 @@
                 <div class="block">
                     <div ng-repeat="item in items">
                         <div class="item item-avatar item-icon-left no-padding">
-                            <img class="circle-base" ng-src="{{ item.counterparty.profile || 'img/profile_2.png' }}"/>
+                            <img class="circle-base" ng-src="{{ item.counterparty.profile || 'img/kettle.png' }}"/>
                             <div class="row default-top">
-                                <div class="col col-50 align-left line-break">
+                                <div class="align-left line-break">
                                     <h2 ng-if="item.description = 'Deposit'">You've made a donation to Coffee Shop's project.</h2>
                                 </div>
-                                <div class="col col-50 align-right line-break">
+                                <div class="col align-right">
                                     <h3>{{ item.currency.symbol }} {{ item.amount }}</h3>
                                     <h5 ng-if="item.fee > 0">{{ item.currency.symbol }} {{ item.fee }} {{'FEE' | translate}}</h5>
                                     <h5>{{ item.created | date:'d MMM' }} | {{ item.status }}</h5>

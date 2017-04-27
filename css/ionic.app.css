@@ -10108,3 +10108,8 @@ img-crop {
     color: #FFF;
     font-size: 16px;
     font-weight: bold; }
+
+.line-break h2, .line-break h3, .line-break h5 {
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: normal; }

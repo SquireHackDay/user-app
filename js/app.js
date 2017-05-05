@@ -22,6 +22,7 @@ angular.module('generic-client', ['ionic',
     'generic-client.controllers.about',
     'generic-client.controllers.currency_accounts',
     'generic-client.controllers.funding',
+    'generic-client.controllers.merchant',
     'generic-client.services',
     'generic-client.services.accounts',
     'generic-client.services.transactions',
@@ -774,6 +775,17 @@ angular.module('generic-client', ['ionic',
                     project: null,
                     amount: null,
                     note: null
+                }
+            })
+
+            // Merchant
+            .state('app.merchant', {
+                url: '/merchant-list',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/merchant/projects_merchant.html',
+                        controller: 'MerchantProjectsCtrl'
+                    }
                 }
             });
 

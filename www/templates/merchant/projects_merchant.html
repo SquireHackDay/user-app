@@ -1,0 +1,31 @@
+<ion-view view-title="{{'MERCHANT' | translate}}">
+    <div ng-controller="MerchantProjectsCtrl">
+        <form name="projectForm" method="post" novalidate>
+            <ion-content class="custom-body">
+
+                <div ng-repeat="project in projects">
+                    <div class="list-projects-merchant">
+                        <div class="block">
+                            <div class="item project">
+                                <div class="img-block">
+                                    <img class="img-project"
+                                          ng-src="img/{{ project.img }}">
+                                </div>
+                                <div class="infos-project-merchant">
+                                    <div class="row default-top">
+                                        <div class="col col-30 align-left">
+                                            <h2><b>{{ project.title }}</b> <i>by {{ project.merchant }}</i></h2>
+                                        </div>
+                                    </div>
+                                    <div class="row default-top">
+                                        <p class="units-left">{{ project.left }} unit(s) left</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-content>
+        </form>
+    </div>
+</ion-view>

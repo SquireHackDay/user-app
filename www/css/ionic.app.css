@@ -10114,31 +10114,15 @@ img-crop {
   text-overflow: inherit;
   white-space: normal; }
 
-.float-button {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  width: 30px;
-  padding: 30px;
-  font-size: 40px;
-  background: #E74C3C;
-  position: fixed;
-  bottom: 20px;
-  /* Adjust to where you want it */
-  right: 20px;
-  /* Adjust to where you want it */
-  z-index: 9999; }
+.row .units-left {
+  font-size: 17px;
+  color: #E74C3C; }
 
-.float-button .height_fix {
-  margin-top: 100%; }
+.infos-project-merchant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; }
 
-.float-button .content {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  margin-top: -20px;
-  /* Note, this must be half the font size */
-  color: #fff; }
+.list-projects-merchant {
+  height: 80px; }

@@ -1,5 +1,5 @@
 <ion-view view-title="{{'MERCHANT' | translate}}">
-    <div ng-controller="MerchantProjectsCtrl">
+    <div ng-controller="MerchantCtrl">
         <form name="projectForm" method="post" novalidate>
             <ion-content class="custom-body">
 
@@ -9,7 +9,7 @@
                             <div class="item project">
                                 <div class="img-block">
                                     <img class="img-project"
-                                          ng-src="img/{{ project.img }}">
+                                         ng-src="img/{{ project.img }}">
                                 </div>
                                 <div class="infos-project-merchant">
                                     <div class="row default-top">
@@ -18,7 +18,9 @@
                                         </div>
                                     </div>
                                     <div class="row default-top">
-                                        <p class="units-left">{{ project.left }} unit(s) left</p>
+                                        <div class="col col-30 align-left">
+                                            <p class="units-left">{{ project.left }} units left</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

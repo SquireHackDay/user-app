@@ -780,11 +780,11 @@ angular.module('generic-client', ['ionic',
 
             // Merchant
             .state('app.merchant', {
-                url: '/merchant-list',
+                url: '/merchant',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/merchant/projects_merchant.html',
-                        controller: 'MerchantProjectsCtrl'
+                        templateUrl: 'templates/merchant/index.html',
+                        controller: 'MerchantCtrl'
                     }
                 }
             });

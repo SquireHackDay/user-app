@@ -1,6 +1,6 @@
 angular.module('generic-client.controllers.merchant', [])
 
-    .controller('MerchantProjectsCtrl', function ($scope, $state) {
+    .controller('MerchantCtrl', function ($scope, $state) {
         'use strict';
 
         $scope.projects = [

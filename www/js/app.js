@@ -95,7 +95,7 @@ angular.module('generic-client', ['ionic',
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/accounts/login.html',
-                controller: 'LoginCtrl'
+                controller: 'LoginCtrl',
             })
 
             .state('loading', {

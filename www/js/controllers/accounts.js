@@ -88,6 +88,7 @@ angular.module('generic-client.controllers.accounts', [])
         };
 
         $scope.logIn = function (form) {
+
             if (form.$valid) {
                 $ionicLoading.show({
                     template: $translate.instant("LOADER_LOGGING_IN")

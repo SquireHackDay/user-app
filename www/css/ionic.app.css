@@ -10075,8 +10075,7 @@ img-crop {
   height: 60px; }
 
 .img-project-lg {
-  float: left;
-  width: 100%; }
+  width: 90%; }
 
 .img-block {
   width: 80px;
@@ -10129,3 +10128,6 @@ img-crop {
 
 .list-projects-merchant {
   height: 90px; }
+
+.purchase-amount h3 {
+  color: #E74C3C; }

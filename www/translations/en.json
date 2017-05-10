@@ -118,7 +118,7 @@
   "CREATE_ACCOUNT": "Create new account",
   "RESET_EMAIL": "Reset email",
   "HOME": "Home",
-  "WELCOME_TEXT": "Welcome",
+  "WELCOME_TEXT": "Welcome!",
   "TRANSACTIONS": "Transactions",
   "TRANSACTIONS_TEXT": "Please verify your email address. Pull to refresh your balance.",
   "TRANSACTION_FEE": "{{ currency }} {{ fee }} Earnings",

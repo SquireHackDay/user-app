@@ -1,30 +1,44 @@
-<ion-view view-title="{{'MERCHANT' | translate}}">
+<ion-view view-title="">
+    <div class="custom-header">
+        <div class="col text-center">
+            <span class="span1">
+                <h2></h2>
+            </span>
+            <span class="span2">
+                <h1>Go Shopping</h1>
+            </span>
+        </div>
+    </div>
     <div ng-controller="MerchantCtrl">
         <form name="projectForm" method="post" novalidate>
-            <ion-content class="custom-body">
+            <ion-content class="custom-header-margin">
+                <ion-refresher on-refresh="refreshData()" spinner="none" on-pulling="none"
+                               pulling-icon="none"></ion-refresher>
 
-                <div ng-repeat="project in projects">
-                    <div class="list-projects-merchant">
-                        <div class="block">
-                            <div class="item project">
-                                <div class="img-block">
-                                    <img class="img-project"
-                                         ng-src="img/{{ project.img }}">
-                                </div>
-                                <div class="infos-project-merchant">
-                                    <div class="row default-top">
-                                        <div class="col col-30 align-left">
-                                            <h2><b>{{ project.title }}</b> <i>by {{ project.merchant }}</i></h2>
+                <div class="custom-body">
+                    <div ng-repeat="project in projects">
+                        <div class="list-projects-merchant">
+                            <div class="block">
+                                <div class="item project">
+                                    <div class="img-block">
+                                        <img class="img-project"
+                                             ng-src="img/{{ project.img }}">
+                                    </div>
+                                    <div class="infos-project-merchant">
+                                        <div class="row default-top">
+                                            <div class="col col-30 align-left">
+                                                <h2><b>{{ project.title }}</b> <i>by {{ project.merchant }}</i></h2>
+                                            </div>
+                                        </div>
+                                        <div class="row default-top">
+                                            <div class="col col-30 align-left">
+                                                <p class="units-left">{{ project.left }} units left</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row default-top">
-                                        <div class="col col-30 align-left">
-                                            <p class="units-left">{{ project.left }} units left</p>
-                                        </div>
+                                    <div class="col button-project">
+                                        <button class="bouton" ng-click="submit({'project': project })">Buy</button>
                                     </div>
-                                </div>
-                                <div class="col button-project">
-                                    <button class="bouton" ng-click="submit({'project': project })">Buy</button>
                                 </div>
                             </div>
                         </div>

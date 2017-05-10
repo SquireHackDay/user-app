@@ -573,8 +573,7 @@ img-crop {
 }
 
 .img-project-lg {
-  float: left;
-  width: 100%;
+  width: 90%;
 }
 
 .img-block {
@@ -643,6 +642,12 @@ img-crop {
 
 .list-projects-merchant{
   height: 90px;
+}
+
+.purchase-amount {
+  h3 {
+    color: $warning;
+  }
 }
 
 

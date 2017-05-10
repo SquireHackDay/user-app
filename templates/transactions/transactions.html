@@ -7,6 +7,7 @@
                 <div class="card">
                     <div class="item item-body">
                         <h2 translate="WELCOME_TEXT"></h2>
+
                         <p translate="TRANSACTIONS_TEXT"></p>
                     </div>
                 </div>
@@ -17,14 +18,23 @@
                 <div class="block">
                     <div ng-repeat="item in items">
                         <div class="item item-avatar item-icon-left no-padding">
-                            <img class="circle-base" ng-src="{{ item.counterparty.profile || 'img/kettle.png' }}"/>
+
+                            <img class="circle-base" ng-if="item.metadata.img"
+                                 ng-src="{{ 'img/' + item.metadata.img }}"/>
+                            <img class="circle-base" ng-if="!item.metadata.img" ng-src="{{ 'img/kettle.png' }}"/>
+
                             <div class="row default-top">
                                 <div class="align-left line-break">
-                                    <h2 ng-if="item.description = 'Deposit'">You've made a donation to Coffee Shop's project.</h2>
+                                    <h2 ng-show="item.tx_type == 'deposit'">You've made a donation to Coffee Shop's
+                                        project.</h2>
+
+                                    <h2 ng-if="item.tx_type == 'send'">{{item.note}}</h2>
                                 </div>
                                 <div class="col align-right">
-                                    <h3>{{ item.currency.symbol }} {{ item.amount }}</h3>
-                                    <h5 ng-if="item.fee > 0">{{ item.currency.symbol }} {{ item.fee }} {{'FEE' | translate}}</h5>
+                                    <h3 ng-if="item.tx_type == 'send'">- {{ item.currency.symbol }} {{ item.amount }}</h3>
+                                    <h3 ng-if="item.tx_type == 'deposit'">{{ item.currency.symbol }} {{ item.amount }}</h3>
+                                    <h5 ng-if="item.fee > 0">{{ item.currency.symbol }} {{ item.fee }} {{'FEE' |
+                                        translate}}</h5>
                                     <h5>{{ item.created | date:'d MMM' }} | {{ item.status }}</h5>
                                 </div>
                             </div>

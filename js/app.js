@@ -783,9 +783,36 @@ angular.module('generic-client', ['ionic',
                 url: '/merchant',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/merchant/index.html',
+                        templateUrl: 'templates/merchant/merchant.html',
                         controller: 'MerchantCtrl'
                     }
+                }
+            })
+
+
+            .state('app.buy_confirm', {
+                url: '/buy_confirm',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/merchant/confirm.html',
+                        controller: 'BuyConfirmCtrl'
+                    }
+                },
+                params: {
+                    project: null
+                }
+            })
+
+            .state('app.buy_success', {
+                url: '/buy_success',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/merchant/success.html',
+                        controller: 'BuySuccessCtrl'
+                    }
+                },
+                params: {
+                    project: null
                 }
             });
 

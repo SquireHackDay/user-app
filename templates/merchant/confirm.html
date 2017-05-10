@@ -1,0 +1,32 @@
+<ion-view view-title="{{'BUY_CONFIRM' | translate}}">
+    <div class="custom-header">
+        <div class="row center">
+            <div class="col col-60 text-center">
+                <h2 translate="BUY_CONFIRM_MESSAGE"
+                    translate-values="{ currency: project.currency.symbol, amount: project.amount}">
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="custom-header-margin">
+        <div class="custom-body text-center" style="padding-top: 10px;">
+            <div class="col col-100">
+                <div class="card">
+                    <img class="img-project-lg"
+                         ng-src="img/{{ project.img }}">
+                    <h4>{{ project.description }}</h4>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="row">
+        <a class="col col-50 high-footer bar bar-footer cancel" menu-close href="#/app/merchant">
+            <h1 class="title" translate="CANCEL"></h1>
+        </a>
+        <button class="col col-50 col-offset-50 high-footer bar bar-footer" ng-click="submit(project.amount, project.to, project.currency)">
+            <h1 class="title" translate="CONFIRM"></h1>
+        </button>
+    </div>
+</ion-view>

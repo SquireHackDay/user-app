@@ -8,6 +8,17 @@ angular.module('generic-client.controllers.merchant', [])
         $scope.projects = [
             {
                 id: 'coffeeshoprehive@gmail.com',
+                'left': '5',
+                'amount': '3.00',
+                'to': 'coffeeshoprehive@gmail.com',
+                'currency': $scope.currency,
+                'merchant': 'Coffee Street',
+                'title': 'Pot Jam',
+                'img': 'jam.jpg',
+                'description': 'Jam like Bob Marley like it.'
+            },
+            {
+                id: 'coffeeshoprehive@gmail.com',
                 'left': '500',
                 'amount': '100.00',
                 'to': 'helghardt@gmail.com',
@@ -21,9 +32,9 @@ angular.module('generic-client.controllers.merchant', [])
                 id: 'coffeeshoprehive@gmail.com',
                 'left': '187',
                 'amount': '150.00',
-                'to': 'helghardt@gmail.com',
+                'to': 'coffeeshoprehive@gmail.com',
                 'currency': $scope.currency,
-                'merchant': 'Starbucks',
+                'merchant': 'Coffee Street',
                 'title': 'Table',
                 'img': 'table.png',
                 'description': 'Most square table in history of tables.'
@@ -47,7 +58,7 @@ angular.module('generic-client.controllers.merchant', [])
                 template: $translate.instant("LOADER_BUYING")
             });
 
-            $scope.note = "Purchase";
+            $scope.note = "You've purchased a " + $scope.project.title + " from " + $scope.project.merchant;
 
             Transaction.create(Conversions.to_cents(amount), $scope.note, to, $scope.project).then(function (res) {
                 if (res.status === 201) {

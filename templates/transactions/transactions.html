@@ -7,8 +7,10 @@
                 <div class="card">
                     <div class="item item-body">
                         <h2 translate="WELCOME_TEXT"></h2>
+                        <p>You can instantly start donating to local merchant projects and earn rewards that you can spend.</p>
 
                         <p translate="TRANSACTIONS_TEXT"></p>
+
                     </div>
                 </div>
             </div>
@@ -28,10 +30,10 @@
                                     <h2 ng-show="item.tx_type == 'deposit'">You've made a donation to Coffee Shop's
                                         project.</h2>
 
-                                    <h2 ng-if="item.tx_type == 'send'">{{item.note}}</h2>
+                                    <h2 ng-if="item.tx_type == 'send' || item.tx_type == 'transfer'">{{item.note}}</h2>
                                 </div>
                                 <div class="col align-right">
-                                    <h3 ng-if="item.tx_type == 'send'">- {{ item.currency.symbol }} {{ item.amount }}</h3>
+                                    <h3 ng-if="item.tx_type == 'send' || item.tx_type == 'transfer'">{{ item.currency.symbol }} {{ item.amount }}</h3>
                                     <h3 ng-if="item.tx_type == 'deposit'">{{ item.currency.symbol }} {{ item.amount }}</h3>
                                     <h5 ng-if="item.fee > 0">{{ item.currency.symbol }} {{ item.fee }} {{'FEE' |
                                         translate}}</h5>

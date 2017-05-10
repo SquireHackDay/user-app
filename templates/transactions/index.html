@@ -1,42 +1,30 @@
-<ion-content class="custom-header-margin">
-    <ion-refresher on-refresh="refreshData()" spinner="none" on-pulling="none" pulling-icon="none"></ion-refresher>
-
-    <div class="custom-body">
-        <div ng-if="items.length == 0">
-            <div class="container-card">
-                <div class="card">
-                    <div class="item item-body">
-                        <h2 translate="WELCOME_TEXT"></h2>
-                        <p translate="TRANSACTIONS_TEXT"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div ng-if="items.length >= 0">
-            <div class="list-default">
-                <div class="block">
-                    <div ng-repeat="item in items">
-                        <div class="item item-avatar item-icon-left no-padding">
-                            <img class="circle-base" ng-src="{{ item.counterparty.profile || 'img/kettle.png' }}"/>
-                            <div class="row default-top">
-                                <div class="align-left line-break">
-                                    <h2 ng-if="item.description = 'Deposit'">You've made a donation to Coffee Shop's project.</h2>
-                                </div>
-                                <div class="col align-right">
-                                    <h3>{{ item.currency.symbol }} {{ item.amount }}</h3>
-                                    <h5 ng-if="item.fee > 0">{{ item.currency.symbol }} {{ item.fee }} {{'FEE' | translate}}</h5>
-                                    <h5>{{ item.created | date:'d MMM' }} | {{ item.status }}</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<ion-view view-title="">
+    <div class="custom-header">
+        <div class="col text-center">
+            <span class="span1">
+                <h2>{{ currency.symbol }}</h2>
+            </span>
+            <span class="span2">
+                <h1> {{ balance }}</h1>
+            </span>
         </div>
     </div>
 
-    <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
-</ion-content>
+    <div ng-include src="'templates/transactions/transactions.html'"></div>
+
+    <!-- Footer bar hack to get layout right -->
+    <ion-footer-bar class="high-footer bar-dark">
+    </ion-footer-bar>
+
+    <div class="row">
+        <!--<a class="col col-50 high-footer bar bar-footer" href="#/app/request">
+            <h1 class="title">Request</h1>
+        </a> -->
+        <a class="col col-100 high-footer bar bar-footer" href="#/app/send">
+            <h1 class="title" translate="PAY"></h1>
+        </a>
+    </div>
+</ion-view>
 
 
 

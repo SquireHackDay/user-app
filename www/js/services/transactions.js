@@ -21,11 +21,12 @@ angular.module('generic-client.services.transactions', [])
             return $http.get(API + '/transactions/' + txId + '/');
         };
 
-        self.create = function (amount, note, to) {
+        self.create = function (amount, note, to, metadata) {
             return $http.post(API + '/transactions/send/', {
                 amount: amount,
                 note: note,
-                recipient: to
+                recipient: to,
+                metadata: metadata
             });
         };
     })

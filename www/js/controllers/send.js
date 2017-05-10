@@ -74,7 +74,7 @@ angular.module('generic-client.controllers.send', [])
                 template: $translate.instant("LOADER_SENDING")
             });
 
-            Transaction.create(Conversions.to_cents(amount), note, to).then(function (res) {
+            Transaction.create(Conversions.to_cents(amount), note, to, {}).then(function (res) {
                 if (res.status === 201) {
                     $ionicLoading.hide();
                     $state.go('app.send_success', {
